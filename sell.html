@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sotish - DLS26 BOZOR</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="main.html">
+                <span class="brand-gold">DLS26</span> <span class="brand-text">BOZOR</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="main.html">Bosh sahifa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="main.html#buy">Sotib olish</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="sell.html">Sotish</a></li>
+                    <li class="nav-item"><a class="nav-link" href="main.html#guide">Qo'llanma</a></li>
+                    <li class="nav-item"><a class="nav-link" href="main.html#rules">Qoidalar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="main.html#contact">Aloqa</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="sell-hero">
+        <div class="container text-center">
+            <h1 class="hero-title">Akkaunt <span class="text-gold">sotish</span></h1>
+            <p class="hero-desc">DLS26 akkauntingizni soting va pul ishlang</p>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="sell-card">
+
+                        <div id="registrationForm" style="display:none;">
+                            <h4 class="mb-3"><i class="bi bi-person-check"></i> Ro'yxatdan o'tish</h4>
+                            <p class="text-muted mb-4">Akkaunt sotish uchun avval ro'yxatdan o'ting</p>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">To'liq ismingiz</label>
+                                    <input type="text" id="regName" class="form-control" placeholder="Masalan: Ali Valiyev">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Telefon raqamingiz</label>
+                                    <input type="tel" id="regPhone" class="form-control" placeholder="+998 90 123 45 67">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Telegram username</label>
+                                    <input type="text" id="regTelegram" class="form-control" placeholder="@username">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Email pochtangiz</label>
+                                    <input type="email" id="regEmail" class="form-control" placeholder="example@mail.com">
+                                </div>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input type="checkbox" class="form-check-input" id="agreeCheck">
+                                <label class="form-check-label" for="agreeCheck">
+                                    Men <a href="main.html#rules" class="text-gold">qoidalar</a> bilan tanishdim va roziman
+                                </label>
+                            </div>
+                            <button class="btn btn-gold" onclick="registerUser()"><i class="bi bi-check2"></i> Ro'yxatdan o'tish</button>
+                        </div>
+
+                        <div id="sellForm" style="display:none;">
+                            <div class="alert alert-success">
+                                <i class="bi bi-check-circle"></i> Ro'yxatdan o'tdingiz! Endi akkauntingizni joylang.
+                            </div>
+                            <h4 class="mb-3 mt-4"><i class="bi bi-controller"></i> Akkaunt ma'lumotlari</h4>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Akkaunt nomi / ID</label>
+                                    <input type="text" id="accName" class="form-control" placeholder="Akkaunt nomi">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Rank</label>
+                                    <select id="accRank" class="form-select">
+                                        <option value="">Rankni tanlang</option>
+                                        <option value="bronze">Bronza</option>
+                                        <option value="silver">Silver</option>
+                                        <option value="gold">Gold</option>
+                                        <option value="legend">Legend</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Akkaunt leveli</label>
+                                    <input type="number" id="accLevel" class="form-control" placeholder="Masalan: 75">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Narxi (so'm)</label>
+                                    <input type="number" id="accPrice" class="form-control" placeholder="Masalan: 200000">
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label class="form-label">Akkaunt haqida</label>
+                                    <textarea id="accDesc" class="form-control" rows="3" placeholder="O'yinchi soni, kuboklar, mavsum, maxsus skinlar va h.k."></textarea>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label class="form-label">Rasmlar (maksimal 6 ta)</label>
+                                    <div class="image-upload-wrapper">
+                                        <div class="image-preview-grid" id="imagePreviewGrid">
+                                            <div class="upload-placeholder" onclick="document.getElementById('imageInput').click()">
+                                                <i class="bi bi-image"></i>
+                                                <span>Rasm qo'shish</span>
+                                            </div>
+                                        </div>
+                                        <input type="file" id="imageInput" accept="image/*" multiple style="display:none" onchange="handleImageUpload(event)">
+                                    </div>
+                                    <small class="text-muted">* 6 tadan ko'p rasm qo'shib bo'lmaydi</small>
+                                </div>
+                            </div>
+                            <button class="btn btn-gold btn-lg w-100" onclick="submitAccount()"><i class="bi bi-send"></i> Akkauntni joylash</button>
+                        </div>
+
+                        <div id="successMessage" style="display:none;">
+                            <div class="text-center py-5">
+                                <i class="bi bi-check-circle text-gold" style="font-size: 4rem;"></i>
+                                <h3 class="mt-3">Akkauntingiz joylandi!</h3>
+                                <p class="text-muted">Admin tekshiruvidan o'tgach e'lon faollashtiriladi.</p>
+                                <a href="main.html" class="btn btn-gold mt-3"><i class="bi bi-arrow-left"></i> Bosh sahifaga qaytish</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-3">
+                <div class="col-lg-4 col-md-6">
+                    <h5><span class="brand-gold">DLS26</span> BOZOR</h5>
+                    <p>Eng ishonchli DLS26 akkaunt bozori</p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5>Tezkor havolalar</h5>
+                    <ul class="footer-links">
+                        <li><a href="main.html#buy">Akkaunt olish</a></li>
+                        <li><a href="sell.html">Akkaunt sotish</a></li>
+                        <li><a href="main.html#guide">Qo'llanma</a></li>
+                        <li><a href="main.html#rules">Qoidalar</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <h5>Aloqa</h5>
+                    <ul class="footer-links">
+                        <li><a href="https://t.me/programmer_67" target="_blank"><i class="bi bi-telegram"></i> @programmer_67</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="footer-hr">
+            <p class="text-center text-muted mb-0">&copy; 2026 DLS26 BOZOR. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/bootstrap.bundle.js"></script>
+    <script src="sell.js"></script>
+</body>
+</html>

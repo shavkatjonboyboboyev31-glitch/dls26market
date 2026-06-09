@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DLS26 BOZOR</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span class="brand-gold">DLS26</span> <span class="brand-text">BOZOR</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Bosh sahifa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#buy">Sotib olish</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sell.html">Sotish</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#guide">Qo'llanma</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#rules">Qoidalar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Aloqa</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-section">
+        <div class="hero-grid"></div>
+        <div class="hero-glowing-orb"></div>
+        <div class="container hero-content text-center">
+            <div class="hero-badge">#1 DLS26 Market</div>
+            <h1 class="hero-title">
+                DLS26
+                <span class="text-gold">BOZOR</span>
+            </h1>
+            <p class="hero-subtitle">Eng ishonchli DLS26 akkaunt bozori — o'z akkauntingizni soting yoki top reytingdagi akkauntlarni xarid qiling</p>
+            <div class="hero-buttons">
+                <a href="sell.html" class="btn btn-gold"><i class="bi bi-cart-plus"></i> Akkaunt sotish</a>
+                <a href="#buy" class="btn btn-outline-gold"><i class="bi bi-cart-check"></i> Akkaunt olish</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-card">
+                <div class="row align-items-end">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <label class="filter-label"><i class="bi bi-funnel"></i> Rank bo'yicha</label>
+                        <select id="rankFilter" class="form-select form-select-lg">
+                            <option value="all">Barcha ranklar</option>
+                            <option value="bronze">Bronza</option>
+                            <option value="silver">Silver</option>
+                            <option value="gold">Gold</option>
+                            <option value="legend">Legend</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <label class="filter-label"><i class="bi bi-coin"></i> Narx oralig'i</label>
+                        <select id="priceFilter" class="form-select form-select-lg">
+                            <option value="all">Barcha narxlar</option>
+                            <option value="low">50 000 - 100 000 so'm</option>
+                            <option value="mid">100 000 - 300 000 so'm</option>
+                            <option value="high">300 000+ so'm</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-gold w-100" onclick="applyFilter()"><i class="bi bi-search"></i> Qidirish</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="buy" class="section-padding">
+        <div class="container">
+            <h2 class="section-title text-center"><i class="bi bi-shop"></i> Akkauntlar <span class="text-gold">do'koni</span></h2>
+            <p class="section-desc text-center">Quyidagi akkauntlardan birini tanlang va sotib oling</p>
+            <div class="row" id="accountCards"></div>
+        </div>
+    </section>
+
+    <section id="guide" class="section-padding">
+        <div class="container">
+            <h2 class="section-title text-center"><i class="bi bi-book"></i> Qo'llanma</h2>
+            <p class="section-desc text-center">Platformadan qanday foydalanish</p>
+            <div class="row g-3 g-md-4">
+                <div class="col-lg-3 col-md-6 col-6">
+                    <div class="guide-card">
+                        <div class="guide-icon">1</div>
+                        <h5>Akkaunt tanlash</h5>
+                        <p>O'zingizga kerakli rank va narxdagi akkauntni toping</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-6">
+                    <div class="guide-card">
+                        <div class="guide-icon">2</div>
+                        <h5>Sotib olish</h5>
+                        <p>"Sotib olish" tugmasini bosing va telegram orqali admin bilan bog'laning</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-6">
+                    <div class="guide-card">
+                        <div class="guide-icon">3</div>
+                        <h5>To'lov qilish</h5>
+                        <p>Admin (@programmer_67) bilan kelishilgan holda to'lovni amalga oshiring</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-6">
+                    <div class="guide-card">
+                        <div class="guide-icon">4</div>
+                        <h5>Akkauntni olish</h5>
+                        <p>To'lov tasdiqlangach akkaunt ma'lumotlarini qabul qiling</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="rules" class="section-padding bg-dark-section">
+        <div class="container">
+            <h2 class="section-title text-center"><i class="bi bi-shield-check"></i> Platforma <span class="text-gold">qoidalari</span></h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="rules-card">
+                        <div class="rule-item">
+                            <i class="bi bi-1-circle"></i>
+                            <p>Barcha savdolar <strong class="text-gold">admin (@programmer_67)</strong> orqali amalga oshiriladi</p>
+                        </div>
+                        <div class="rule-item">
+                            <i class="bi bi-2-circle"></i>
+                            <p>Platforma yaratuvchisi har bir savdodan <strong class="text-gold">5%</strong> komissiya oladi</p>
+                        </div>
+                        <div class="rule-item">
+                            <i class="bi bi-3-circle"></i>
+                            <p>Akkaunt sotib olgandan keyin qaytarib berilmaydi (yolg'on ma'lumot bo'lmasa)</p>
+                        </div>
+                        <div class="rule-item">
+                            <i class="bi bi-4-circle"></i>
+                            <p>Yolg'on yoki soxta akkaunt joylagan foydalanuvchilar bloklanadi</p>
+                        </div>
+                        <div class="rule-item">
+                            <i class="bi bi-5-circle"></i>
+                            <p>Savdo jarayonidagi nizolar admin tomonidan hal qilinadi</p>
+                        </div>
+                        <div class="rule-item">
+                            <i class="bi bi-6-circle"></i>
+                            <p>Akkaunt rasmlari haqiqiy bo'lishi shart, boshqa saytlardan olingan rasmlar taqiqlanadi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding">
+        <div class="container text-center">
+            <h2 class="section-title"><i class="bi bi-telegram"></i> Biz bilan <span class="text-gold">aloqa</span></h2>
+            <p class="section-desc">Savol va takliflar uchun telegram orqali murojaat qiling</p>
+            <a href="https://t.me/programmer_67" target="_blank" class="btn btn-telegram btn-lg mt-3">
+                <i class="bi bi-telegram"></i> @programmer_67
+            </a>
+            <p class="mt-4 text-muted">Admin: @programmer_67 | Yaratuvchi: @programmer_67</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-3">
+                <div class="col-lg-4 col-md-6">
+                    <h5><span class="brand-gold">DLS26</span> BOZOR</h5>
+                    <p>Eng ishonchli DLS26 akkaunt bozori.</p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5>Tezkor havolalar</h5>
+                    <ul class="footer-links">
+                        <li><a href="#buy">Akkaunt olish</a></li>
+                        <li><a href="sell.html">Akkaunt sotish</a></li>
+                        <li><a href="#guide">Qo'llanma</a></li>
+                        <li><a href="#rules">Qoidalar</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <h5>Aloqa</h5>
+                    <ul class="footer-links">
+                        <li><a href="https://t.me/programmer_67" target="_blank"><i class="bi bi-telegram"></i> @programmer_67</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="footer-hr">
+            <p class="text-center text-muted mb-0">&copy; 2026 DLS26 BOZOR. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="btn btn-gold back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <script src="../../js/bootstrap.bundle.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
